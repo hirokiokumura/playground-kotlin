@@ -1,0 +1,20 @@
+machine:
+  timezone:
+    Asia/Tokyo
+  java:
+    version: oraclejdk8
+  post:
+      - sudo service mysql stop
+      - sudo service postgresql stop
+
+checkout:
+  post:
+    - chmod +x ./gradlew
+
+dependencies:
+  override:
+    - ./gradlew testClasses --stacktrace
+
+test:
+  override:
+    - ./gradlew --full-stacktrace check
