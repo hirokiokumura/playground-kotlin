@@ -17,4 +17,4 @@ dependencies:
 
 test:
   override:
-    - ./gradlew --full-stacktrace check
+    - ./gradlew test jacocoTestReport coveralls
