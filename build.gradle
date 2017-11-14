@@ -24,9 +24,6 @@ apply plugin: 'kotlin'
 apply plugin: 'kotlin-spring'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
-//apply plugin: 'jacoco'
-apply plugin: 'groovy'
-apply plugin: 'java-library'
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
@@ -50,6 +47,10 @@ jacocoTestReport {
 		csv.enabled false
 		html.enabled true
 	}
+}
+
+coveralls {
+	sourceDirs = files(sourceSets.main.allSource.srcDirs).files.absolutePath
 }
 
 dependencies {
